@@ -26,7 +26,7 @@ One feature I enjoyed implementing was the upvote feature, which is displayed in
 
 ## Text Editor
 
-The amazing WYSIWYG text editor, which is the centerpiece of the thread page, was implemented using Imperavi's jQuery library, which is called Redactor 2. While it's not free, it is definitely worth the price for allowing users to share and upload files, videos, and images. I was excited to know that Youtube links are automatically converted to an HTML embed. I am also fond of the customization of the toolbar and how easy it is to implement the text editor on any page.
+The amazing WYSIWYG text editor, which is the centerpiece of the thread page, was implemented using Imperavi's jQuery library, which is called Redactor 2. While it's not free, it is definitely worth the price for allowing users to share and upload files, videos, and images. I was excited to know that Youtube links are automatically converted to an HTML embed. I am also fond of the customization of the toolbar and how easy it is to implement the text editor on any page. (Proprietary file not included)
 
 I was able to incorporate this text editor into the posts by selecting the div in jQuery and using AJAX to send data to the server, where files would be stored in /uploads/ and the text would be stored in the database in HTML format to preserve its special content. I used this same method in other areas of the site, such as for the "About Me" section of the User CP.
 
