@@ -1,6 +1,6 @@
 # ideaz.cloud
 
-[![alt-text](https://j.gifs.com/59mkOx.gif)](https://youtu.be/TwqnSCl8SmY)
+[![](https://github.com/vicente-orellana/ideaz.cloud/blob/master/preview.gif)](https://youtu.be/TwqnSCl8SmY)
 
 My CS50 Final Project from 2016. Ideaz.cloud is a web application for online discussion, which uses PHP, SQL, HTML, CSS, AJAX, Javascript, jQuery, and Twitter Bootstrap. The site is much like an online forum in that it allows one to register an account and create threads (also known as "ideaz"), which are sorted in categories that users can freely create. Additionally, users are able to upvote threads; customize their "About Me" page; upload an avatar; and share videos, images, and files.
 
