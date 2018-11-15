@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ideaz.Cloud - Documentation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script type-"text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <style>
+    /* Fonts */
+
+    @font-face {
+    	font-family: Lato-Light;
+    	src: url("/ideaz/templates/fonts/Lato-Light.ttf");
+    }
+    
+    @font-face {
+    	font-family: Lato-Regular;
+    	src: url("/ideaz/templates/fonts/Lato-Regular.ttf");
+    }
+    
+    @font-face {
+    	font-family: Lane;
+    	src: url("/ideaz/templates/fonts/Lane.ttf");
+    }
+    
+    html, body {
+        background: -webkit-linear-gradient(#67dbef, #fff); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#67dbef, #fff); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#67dbef, #fff); /* For Firefox 3.6 to 15 */
+        background: #82ecff linear-gradient(#67dbef, #fff) fixed; /* Standard syntax */
+    }
+    
+    body {
+    	font-family: Lato-Light, sans-serif !important;
+    	font-size: 20px;
+    }
+    
+    #wrapper {
+    	background-color: #fff;
+    	border-radius: 20px;
+    	padding: 20px;
+    	margin: 15px 30px 20px 30px;
+    	font-size: 17px;
+    	min-height: 750px;
+    }
+    
+    .loader {
+    	position: fixed;
+    	left: 0px;
+    	top: 0px;
+    	width: 100%;
+    	height: 100%;
+    	z-index: 9999;
+    	background: url('/ideaz/templates/images/load.gif') 50% 50% no-repeat rgb(249,249,249);
+    }
+    
+    #logo {
+    	color: #fff;
+    	font-size: 60px;
+    	text-transform: lowercase;
+    	font-family: Lane, sans-serif;
+    }
+    
+    #logo:hover {
+    	text-shadow: 0 0 10px #fff;
+    }
+    
+    #logo a {
+    	color: #fff;
+    	text-decoration: none;
+    }
+    
+    #content {
+    	text-align: center;
+    }
+    
+    .page-title {
+    	margin-bottom: 10px;
+    }
+    
+    .lighttext {
+    }
+    
+    .header-text {
+    }
+    
+    @media screen and (min-width: 990px) and (max-width: 1250px) {
+    	.cloud-thread {
+    		zoom: 75%;
+    	}
+    }
+    
+    /* Clouds */
+    
+    .cloud-thread {
+    	text-align: center;
+    	color: #67dbef;
+    	font-size: 280px !important;
+    }
+    
+    .cloud-thread:hover {
+    	text-shadow: 0 0 30px #67dbef;
+    }
+    
+    .cloud-thread-info {
+    	font-family: sans-serif;
+    	font-size: 16px;
+    	margin-bottom: -250px;
+    	font-family: Lato-Regular, sans-serif;
+    }
+    
+    .cloud-upvotes {
+    	background: #55cde0;
+    	color: #f9ee13;
+    	font-size: 20px;
+    	width: 150px;
+    	border-radius: 20px;
+    	border: 2px solid #f9ee13;
+    	padding: 5px;
+    	top: -205px;
+    	left: 50px;
+    	position: relative;
+    }
+    
+    .cloud-title {
+    	color: #fff;
+    	top: -200px;
+    	left: 50px;
+    	width: 200px;
+    	height: 90px;
+    	font-size: 20px;
+    	word-wrap: break-word;
+    	position: relative;
+    	display: table-cell;
+    	vertical-align: middle;
+    	margin: 0;
+    }
+    
+    .cloud-sub {
+    	background-color: #fff;
+    	width: 230px;
+    	height: 55px;
+    	border: 2px solid #337AB7;
+    	border-radius: 20px;
+    	padding: 5px;
+    	color: #337AB7;
+    	top: -200px;
+    	left: 40px;
+    	display: table;
+    	position: relative;
+    }
+    
+    .cloud-sub p {
+    	text-shadow: none;
+    }
+    
+    .cloud-sub .user {
+    	line-height: 20px;
+    	border-bottom: 1px solid #337AB7;
+    }
+    
+    .cloud-sub .posts {
+    	margin: 0;
+    }
+    
+    @media screen and (max-width: 400px) {
+    	.cloud-thread {
+    		font-size: 230px !important;
+    		right: 27px;
+    		position: relative;
+    	}
+    
+    	.cloud-upvotes {
+    		width: 150px;
+    		top: -200px;
+    		left: 35px;
+    	}
+    
+    	.cloud-title {
+    		top: -200px;
+    		left: 35px;
+    		max-width: 170px;
+    	}
+    
+    	.cloud-sub {
+    		left: 10px;
+    	}
+    }
+    
+    /* Threads */
+    
+    .discussion {
+    	position: relative;
+    	text-align: left;
+    	padding: 30px 30px 20px 30px;
+    	margin: 0;
+    	color: #fff;
+    	background: #5a8f00; /* default background for browsers without gradient support */
+    	/* css3 */
+    	background: -webkit-gradient(linear, 0 0, 0 100%, from(#69DCF0), to(#51c4d6));
+    	background: -moz-linear-gradient(#69DCF0, #51c4d6);
+    	background: -o-linear-gradient(#69DCF0, #51c4d6);
+    	background: linear-gradient(#69DCF0, #51c4d6);
+    	-webkit-border-radius: 10px;
+    	-moz-border-radius: 10px;
+    	border-radius: 10px;
+    }
+    
+    .discussion:after {
+    	content: "";
+    	position: absolute;
+    	bottom: -20px;
+    	left: 50px;
+    	border-width: 0 20px 20px 0px;
+    	border-style: solid;
+    	border-color: transparent #51c4d6;
+    	/* reduce the damage in FF3.0 */
+    	display: block;
+    	width: 0;
+    }
+    
+    .discussion + div {
+    	text-align: left;
+    	margin: 15px 0 2em 90px;
+    	font-style: italic;
+    }
+    
+    .discussion + div img {
+    	max-width: 50px;
+    	max-height: 50px;
+    	border-radius: 50%;
+    	margin-left: 10px;
+    }
+    
+    .discussion + div a {
+    	color: #333;
+    }
+    
+    /* Posts */
+    
+    .btn-textbox {
+    	border-top-left-radius: 0 !important;
+    	border-top-right-radius: 0 !important;
+    }
+    
+    .lightbulb:hover {
+    	cursor: pointer;
+    }
+    
+    .upvote {
+    	float: left;
+    	font-size: 50px;
+    }
+    
+    .upvote a {
+    	color: #fff;
+    }
+    
+    .upvote a:hover, .upvote a:active {
+    	color: #eee;
+    }
+    
+    .upvoted {
+    	color: #f9ee13;
+    	text-shadow: 0 0 7px #f9ee13;
+    }
+    
+    #post-textbox {
+    	margin-bottom: 50px;
+    }
+    
+    /* Categories */
+    
+    .category {
+    	background: none;
+    	width: 250px;
+    	padding: 0px 15px 15px 15px;
+    	color: #337AB7;
+    	border: 2px solid #337AB7;
+    	border-radius: 20px;
+    	margin: 0 5px 5px 5px;
+    	word-wrap: break-word;
+    	text-align: center;
+    	display: inline-block;
+    }
+    
+    @media screen and (max-width: 400px) {
+    	.category {
+    		width: 100%;
+    	}
+    }
+    
+    .category:hover, .category a:hover {
+    	box-shadow: 0 0 20px #337AB7;
+    	text-decoration: none;
+    }
+    
+    .category h2 {
+    	font-size: 20px;
+    }
+    
+    .cat-toggle {
+    	border: 2px solid #337AB7 !important;
+    	border-radius: 15px !important;
+    	color: #337AB7;
+    	margin: 5px 0 5px 0 !important;
+    	width: 100% !important;
+    }
+    
+    /* Users */
+    
+    .avatar {
+    	margin: 0 auto;
+    	max-width: 250px;
+    	max-height: 250px;
+    }
+    
+    #users-list {
+    	list-style: none;
+    }
+    
+    ul#users-list li {
+    	margin: 0 5px 5px 5px;
+    	display: inline-block;
+    	border: 2px solid #69DBEF;
+    	border-radius: 20px;
+    	padding: 20px;
+    	text-align: center;
+    }
+    
+    ul#users-list li:hover {
+    	box-shadow: 0 0 20px #69DBEF;
+    }
+    
+    ul#users-list li img {
+    	max-width: 100px;
+    	max-height: 100px;
+    	border-radius: 50%;
+    }
+    .step {
+      border: 3px solid #337AB7;
+      border-radius: 50%;
+      font-size: 70px;
+      color: #337AB7;
+      width: 100px;
+      height: 100px;
+      vertical-align: middle;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div class="container-fluid text-center">
+   <h1 id="logo"><i class="fa fa-lightbulb-o"></i> Ideaz.cloud</h1>
+  </div>
+  <div class="container-fluid" id="wrapper">
+
+    <div class="container-fluid">
+        <div class="col-xs-12 text-center">
+          <h1>Documentation</h1>
+          <p>Welcome to ideaz.cloud! Below is a walkthrough for setting up and using the interactive discussion web application.</p>
+
+          <h3>About this project</h3>
+          <p>Ideaz.cloud is a discussion web application of sorts, which uses PHP, SQL, HTML, CSS, AJAX, Javascript, jQuery, and Twitter Bootstrap. It is much like an online forum in that it allows one to register an account and create threads (also known as "ideaz"), which are sorted in categories that users can freely create. Additionally, users are able to upvote threads; customize their "About Me" page; upload an avatar; and share videos, images, and files.</p>
+
+          <div class="row">
+            <h2>Let's Get Started!</h2>
+
+            <!-- Step One -->
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <div class="step">1</div>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <p>Download and extract the .zip file.</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- Step Two -->
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <div class="step">2</div>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <p>Upload the contents of the /ideaz directory into your server (such as CS50's IDE).</p>
+                <p>Note: If using CS50's IDE, be sure to use <code>apache50 start</code> on the <u>innermost</u> /ideaz folder.</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- Step Three -->
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <div class="step">3</div>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <p>Create a new database (preferably titled "ideazcloud"). Import the contents from the ideazcloud.sql file into your newly-created database.</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- Step Four -->
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <div class="step">4</div>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <p>Navigate to the uploaded /includes/config.php file and enter your database information (host, username, password, and database name). The database name will likely be "ideazcloud".</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- Step Five -->
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <div class="step">5</div>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <p><b>Important: Be sure you have allowed file uploads on your server. You can do so by adding the following to your php.ini file:</b></p>
+
+                <p><code>file_uploads = On</code></p>
+
+                <p>(Optional) To ensure proper redirect to the 404 error page, add the following to your .htaccess file:</p>
+
+                <p>
+                <code>
+                   # 404 Not Found<br />
+                   ErrorDocument 404 /not_found.php <br />
+                 </code>
+                </p>
+              </div>
+            </div>
+
+            <p><h2>You're all set!</h2></p>
+
+            <hr />
+
+            <p><h1>Usage</h1></p>
+
+            <h3>Administrator Account</h3>
+            <p>The administrator username is <b>admin</b>, whose password is also <b>admin</b>. Using this account, you can edit and delete any thread or post. Want to create your own admin account? Log out and click the "Register" button in the navigation bar. A modal should pop up and give you basic user information to fill out. To give a user administrator privileges, you must go to the "users" table in your database and set the user's "is_admin" column to 1 (default is 0). It should be noted that all users are able to edit and remove their own posts and threads.</p>
+
+            <h3>Categories</h3>
+            <p>In order to create a thread, you must first be logged in. Then, navigate to the "Categories" page by clicking on its corresponding tab. Here, you will find the letters of the alphabet and various existing categories. If you cannot find a category pertinent to your idea, then simply create a new one! Once you have done so, you can find your category by clicking on the pill/tab that corresponds to the first letter of your newly-created category. Click on it and head to its category page.</p>
+
+            <h3>Ideaz!</h3>
+            <p>Here is where you will be able to create a new thread (idea). If logged in, simply click the "New Idea" button, enter a title for your thread, and some content. Notice how the body is much like a rich text editor. It turns out that you can upload files and images directly from this textarea. Additionally, you can simply copy and paste image or Youtube video links to the textbox, and they will automatically be converted to a visual representation of the image or video.</p>
+            <p>Once you are done, click "Post". You should now see your thread in the category's page.</p>
+
+            <h3>Posts</h3>
+            <p>Now that you have created your thread, click on it to arrive at its idea page. This is where the magic happens. You can upvote an idea by clicking on the lightbulb icon to the left of the thread title in the main thought bubble. This gives the thread an "Ideaz" point. Threads with the most ideaz will show up on the front page, which happens to be the "Big Ideaz" page.</p>
+            <p>Of course, the thread page is also where you can have a live discussion with others. If logged in, you should be able to see the text editor below your thought bubble. Add some content--text, images, files, videos--and click "Post". Without refreshing the page, your message should be displayed in the thread. Recent posts will show up closer to the top of the page, along with the user's avatar and username. To prevent clogging the page with a bunch of posts, infinite scroll has been implemented, which loads more posts when you scroll down. Of course, this only works when there are more than 5 posts in the thread.</p>
+
+            <h3>User CP</h3>
+            <p>Speaking of avatars, you may have noticed the default anonymous avatar next to your username. You can change this by clicking on the "User CP" link on the navigation bar beneath the website logo (next to "Logout"). You should now be at your user control panel. First thing's first: the "About Me" section. This is what others will see when they click on your username to view your profile. Notice how it uses the same rich text editor as on other pages. This means you can use text, videos, files, and images to express your interests. In the future, I plan on allowing one to customize their profile pages by editing the CSS and HTML.</p>
+            <p>Below the "About Me" section are the sections for allowing password and email changes. All of these sections are optional and can be left blank if one wishes to update only a particular aspect of their account/profile.</p>
+            <p>Finally, if you scroll all the way down, you will see the "Change Avatar" section. Here, you can upload an image that is less than or equal to 250 x 250 pixels. There is a dropzone, which gives users the option to drag and drop an image from their computer. Be sure your avatar is in .jpg, .jpeg, .gif, .png, or .pjpeg format!</p>
+
+            <h3>New Ideaz</h3>
+            <p>Now that we've covered the nitty-gritty of the website, we should take a look at the rest of Ideaz.cloud's features. The "New Ideaz" page is where new threads will be shown. The most recent ones will be displayed first.</p>
+
+            <h3>Users</h3>
+            <p>Here is where one can find other users. Clicking on a user's avatar or username will direct you to their profile, where you can see their username, post count, avatar, and information entered in the "About Me" section.</p>
+
+            <p>With that, we are finished!</p>
+
+            <hr />
+            
+            <h1>Thank you</h1>
+            <p>Those are all of the features added thus far. As previously mentioned, I will continue adding more features in the future. This was an exciting project, and I can say with absolute certainty that Harvard's CS50 has given me the skills to tackle virtually any web-based project.</p>
+
+            <p>Thank you,</p>
+            <p><i>- Vicente Orellana</i></p>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(document).ready(function() {
+    // page loader
+
+    $(window).load(function() {
+      $(".loader").fadeOut("slow");
+    });
+    
+    // ajax loader
+    ajax_load = "<img src='/ideaz/templates/images/load.gif' alt='Loading...' />";
+  })
+</script>
+</html>
